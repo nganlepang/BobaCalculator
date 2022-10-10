@@ -1,1 +1,30 @@
-		
+import math
+
+def bubble_tea_calculator(tea_base, add_ons, loyalty_discount):
+    # count each add on and multiply by price of each add on
+  total = 0
+  
+  tea_base = {
+    "milk" : "4.35",
+    "oolong" : "4.60",
+    "rose" : "5.85",
+    "mango" : "5.47"
+  }
+  
+  add_ons = {
+    "boba" : "0.50",
+    "lychee" : "0.75",
+    "jelly" : "0.65",
+    "taro" : "1.00",
+    "chia" : "0.35"
+  }
+
+  if loyalty_discount == True:
+        total = total - 1
+
+  add_ons_total = sum(add_ons[item] for item in add_ons)
+
+    
+  total = (tea_base) + (add_ons_total) + (loyalty_discount)
+
+print('total add_ons: ${0:,.2f}'.format(total))
