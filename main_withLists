@@ -1,0 +1,34 @@
+import math
+
+def bubble_tea_calculator(tea_base, add_ons, loyalty_discount):
+    cost = []
+    if tea_base == 'milk':
+        cost.append(4.35)
+    elif tea_base == 'oolong':
+        cost.append(4.60)
+    elif tea_base == 'rose':
+        cost.append(5.85)
+    elif tea_base == 'mango':
+        cost.append(5.47)
+    
+    for add_on in add_ons:
+        if add_on == 'boba':
+            cost.append(0.50)
+        elif add_on == 'lychee':
+            cost.append(0.75)
+        elif add_on == 'jelly':
+            cost.append(0.65)
+        elif add_on == 'taro':
+            cost.append(1.00)
+        elif add_on == 'chia':
+            cost.append(0.35)
+    
+    drinkTotal = 0
+    
+    for prices in cost:
+        drinkTotal = drinkTotal + prices
+            
+    if loyalty_discount == True:
+        drinkTotal = drinkTotal - 1
+        
+    print("The cost of the drink is $" + "{:.2f}".format(drinkTotal))
